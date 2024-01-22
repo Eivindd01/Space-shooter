@@ -82,10 +82,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91eb7702d4f918e4b9ad2ecdcbb182d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 6
   missileCreator: {fileID: 4252818673044244917}
-  shootingPoint: {fileID: 9186612833927275313}
-  fireCooldown: 1
+  fireCooldown: 0.8
   damage: 1
 --- !u!114 &68578951548699130
 MonoBehaviour:
@@ -116,8 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1239499996484476057, guid: f73d0a55cfae39e4d93d727e13fc246b, type: 3}
-  speed: 1
-  ShootPoint: {fileID: 9186612833927275313}
+  speed: 15
 --- !u!50 &8459235791586526340
 Rigidbody2D:
   serializedVersion: 4
@@ -126,7 +124,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4829086850941408553}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

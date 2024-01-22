@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8589667348099288358}
   - component: {fileID: -8182989486262360716}
   - component: {fileID: 1887150202077167500}
+  - component: {fileID: -6683303356986106859}
   - component: {fileID: 7673187387561152722}
   - component: {fileID: 5490244175075337256}
   m_Layer: 0
@@ -66,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 83889839954424014, guid: 1757be0b2d1d8654d98544ae74171905, type: 3}
-  speed: 1
+  speed: 0.8
 --- !u!114 &1887150202077167500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +80,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577afbac91d460948853db5f73538315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 3
+--- !u!114 &-6683303356986106859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380162629428403269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce4d5654702a4a40ab4f5b41807c186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 0
 --- !u!61 &7673187387561152722
 BoxCollider2D:
   m_ObjectHideFlags: 0

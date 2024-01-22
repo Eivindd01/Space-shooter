@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour
-{
-    public Text Score_text; 
-    int score = 0;
+public class Score : MonoBehaviour {
+
     public static Score instance;
+    
+    [SerializeField]
+    private Text enemyKillCountTxt;
+
+    private int enemyKillCount;
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+            instance = this;
     }
 
-    public void Add_score() //"Score: " est le text + score est la valeur
+    public void EnemyKilled()
     {
-        score += 1;
-        Score_text.text = "Score: " + score;
+        enemyKillCount++;
+        enemyKillCountTxt.text = "Score: " + enemyKillCount;
     }
-
-
 }

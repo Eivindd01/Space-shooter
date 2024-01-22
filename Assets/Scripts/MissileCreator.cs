@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MissileCreator : MonoBehaviour
 {
+
     [SerializeField]
     GameObject projectilePrefab;
 
@@ -22,4 +23,5 @@ public class MissileCreator : MonoBehaviour
         proj.dir = dir;
         proj.speed = speed;
     }
+
 }

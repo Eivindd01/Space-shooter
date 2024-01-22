@@ -7,10 +7,13 @@ public class EnnemyHealth : MonoBehaviour
     public int maxHealth = 3;
     public int currentHealth;
 
+    Score ScoreScript;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        
     }
 
     // Update is called once per frame
@@ -25,6 +28,7 @@ public class EnnemyHealth : MonoBehaviour
         if (currentHealth <= 0) 
         { 
             Destroy(this.gameObject);
+            Score.instance.EnemyKilled();
         }
     }
 }

@@ -4,7 +4,8 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class ProjectileShoot : MonoBehaviour
-{   
+{
+
     public string Tag;
     public delegate void OnProjectileCollide(Collider2D collider);
     public OnProjectileCollide onProjectileCollide;
@@ -18,17 +19,19 @@ public class ProjectileShoot : MonoBehaviour
         if (collision.gameObject.CompareTag(Tag))
         {
             if (onProjectileCollide != null) onProjectileCollide(collision);
+            Destroy(gameObject);
         }
         
         else if (collision.gameObject.tag == "Boundaries") Destroy(this.gameObject);
 
-        /*switch(collision.gameObject.tag) //Exemple de case
+        /*switch(collision.gameObject.tag) //Exemple de switch avec des cases
         {
             case "Player": break;
 
         }
         */
     }
+
 
     private void Update()
     {

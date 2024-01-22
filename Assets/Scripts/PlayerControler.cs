@@ -14,8 +14,6 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]
     MissileCreator missileCreator;
 
-    public Transform shootingPoint;
-
     private Rigidbody2D rb;
     private bool fire;
 
@@ -37,6 +35,7 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (fire) TryShoot();
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
@@ -49,7 +48,6 @@ public class PlayerControler : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        if (fire) TryShoot();
     }
 
     private void Awake() //Si Awake instancie le PlayerController
@@ -79,7 +77,7 @@ public class PlayerControler : MonoBehaviour
     void GetInput()
     {
         fire = Input.GetAxis("Fire4") == 1 ? true : false; //Deamnde si fire = true 
-        horizontal = Input.GetAxis("Horizontal");
+        horizontal = Input.GetAxis("Horizontal"); 
         vertical = Input.GetAxis("Vertical");
     }
 
@@ -88,7 +86,7 @@ public class PlayerControler : MonoBehaviour
         if (Time.timeSinceLevelLoad - lastFireTime < fireCooldown) return; //return fait que le code du bas ne s'éxecute pas si cooldown
         lastFireTime = Time.timeSinceLevelLoad;
         fire = false;
-        missileCreator.Shoot(transform.forward, OnEnnemyShoot);       
+        missileCreator.Shoot(transform.up, OnEnnemyShoot);       
     }
  
     void OnEnnemyShoot(Collider2D Collider) //Appliquer dégats sur vie de l'ennemi
